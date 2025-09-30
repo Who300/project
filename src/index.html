@@ -1,15 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="styles.css">
 <meta charset="UTF-8">
-<!-- Важная мета-информация для корректного отображения на мобильных устройствах -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мой первый проект</title>
-<!-- Подключение фавиконки -->
-<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-</head>
+<title>Главная - Название сайта</title>
+<meta name="description" content="Краткое описание главной страницы вашего сайта">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head> 
 <body>
-<h1>Заглушка</h1>
-<p>Скоро здесь будет крутой сайт!</p>
+<!-- Шапка сайта -->
+<header class="site-header">
+<link rel="icon" href="../assets/favicon.ico" type="image/x-icon"></a>
+<nav class="site-nav" aria-label="Основная навигация">
+<ul class="site-nav__list">
+<li class="site-nav__item"><a class="site-nav__link"
+href="index.html">Главная</a></li>
+<li class="site-nav__item"><a class="site-nav__link"
+href="about.html">О нас</a></li>
+<li class="site-nav__item"><a class="site-nav__link site-nav__link--
+cta" href="#contacts">Связаться</a></li>
+</ul>
+</nav>
+</header>
+<!-- Уникальное основное содержимое страницы -->
+<main>
+<h1>Добро пожаловать на наш сайт!</h1>
+
+<!-- Секция 1 с якорем -->
+<section id="services">
+<h2>Наши услуги</h2>
+<p>Описание предоставляемых услуг...</p>
+<a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+</section>
+<!-- Секция 2 с якорем -->
+<section id="portfolio">
+<h2>Портфолио</h2>
+<p>Примеры наших работ...</p>
+<!-- width/height уменьшают «скачок» макета (CLS); alt обязателен -->
+<img
+src="../assets/cool.png"
+alt="Проект: макет жертвоприножения"
+width="640" height="360"
+loading="lazy" decoding="async">
+</section>
+<!-- Секция 3 с якорем -->
+<section id="contacts">
+<h2>Контактная информация</h2>
+<p>Наши контакты...</p>
+<a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+<!-- Добавьте субтитры через <track> (WebVTT); poster — превью-кадр -->
+<video class="media" controls preload="metadata" playsinline
+width="960" height="540" poster="video/poster.jpg">
+<source src="../assets/Kingdom- New Lands - 2025-03-14 13-26-37.mp4" type="video/mp4"> <!-- основной
+формат -->
+<source src="../assets/Kingdom- New Lands - 2025-03-14 13-26-37.mp4" type="video/mp4"> 
+<track kind="captions" srclang="ru" src="video/captions-ru.vtt"
+label="Русские субтитры" default>
+Ваш браузер не поддерживает видео.
+</video>
+</section>
+
+<!-- Кнопка открытия модалки -->
+<button id="openDialog" type="button">Написать нам</button>
+<!-- Модалка с формой -->
+<dialog id="contactDialog" aria-labelledby="dialogTitle">
+<h2 id="dialogTitle">Обратная связь</h2>
+<form id="contactForm" method="dialog" novalidate>
+<label for="name">Имя</label>
+<input id="name" name="name" type="text" required minlength="2"
+autocomplete="given-name">
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" required
+autocomplete="email">
+<label for="phone">Телефон</label>
+<input id="phone" name="phone" type="tel" inputmode="tel"
+autocomplete="tel"
+aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__"
+required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+<small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+<label for="date">Дата</label>
+<input id="date" name="date" type="date">
+<label for="topic">Тема</label>
+<select id="topic" name="topic" required>
+<option value="">Выберите тему</option>
+<option>Вопрос</option>
+<option>Заказ</option>
+</select>
+<label for="message">Сообщение</label>
+<textarea id="message" name="message" rows="4" required></textarea>
+<div class="form-actions">
+<button type="button" id="closeDialog">Закрыть</button>
+<button type="submit">Отправить</button>
+</div>
+</form>
+</dialog>
+
+</main>
+<!-- Подвал сайта -->
+<footer>
+<p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+<p>Телефон: +7 (123) 456-78-90</p>
+</footer>
+
 </body>
+<script src="123.js"></script>
 </html>
